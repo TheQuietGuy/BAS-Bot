@@ -284,6 +284,10 @@ entirely. Tested with a mocked webhook: fires the right payload when
 configured, silently no-ops when it isn't, and never blocks the
 underlying points/reset action even if the webhook post itself fails.
 
+## Live demonstration
+
+Will be done soon when I get time
+
 ## What could still be improved
 
 - Discord OAuth2's live HTTP calls are untested against real Discord (see above)
