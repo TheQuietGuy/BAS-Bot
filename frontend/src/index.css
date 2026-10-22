@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: #0e1016;
+  color: #ece9f5;
+  font-family: "Space Grotesk", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #7c6fe0;
+  color: #0e1016;
+}
+
+/* A hairline rule with a repeating dot -- a quiet nod to manga screentone
+   shading, used only for section dividers, never decoratively repeated. */
+.screentone-rule {
+  height: 1px;
+  background-image: radial-gradient(circle, #2a2e3a 1px, transparent 1px);
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+}
+
+/* Panel: the core structural unit of the dashboard, styled like a manga
+   panel -- a solid rule, near-zero radius, no drop shadow. */
+.panel {
+  background-color: #171a22;
+  border: 1.5px solid #2a2e3a;
+  border-radius: 3px;
+}
+
+.panel-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  color: #8a8fa6;
+}
+
+/* Focus ring: visible, square-ish to match the panel aesthetic rather than
+   a generic soft blue glow. */
+:focus-visible {
+  outline: 2px solid #7c6fe0;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 0.35s ease-out both;
+}
